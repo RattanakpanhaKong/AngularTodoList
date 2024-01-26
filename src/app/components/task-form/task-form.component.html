@@ -1,1 +1,23 @@
-<p>task-form works!</p>
+<div class="pt-[10px]">
+  <form>
+    <div class="flex justify-center gap-x-4">
+      <input
+        [(ngModel)]="newTask"
+        name="newTask"
+        class="border border-black p-2"
+        placeholder="Input Task: "
+        type="text"
+      />
+      <button 
+        [disabled]="newTask.length == 0" 
+        class="border border-black p-2 rounded-lg bg-green-500 disabled:bg-slate-400" 
+        (click)="addTask()">
+        Add
+      </button>
+    </div>
+  </form>
+</div>
+
+<div>
+    <app-tasks-list [tasks]="tasks"></app-tasks-list>
+</div>
